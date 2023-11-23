@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> svgDashAni </title>
+    <style>
+        body {
+            background: linear-gradient(180deg, rgba(253, 255, 142, 0.97) 0%, rgba(249, 108, 218, 0.89) 100%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .myPath {
+            stroke-dasharray: 20 10;
+            /* 20px 선, 5 여백 */
+            stroke-dashoffset: 300;
+            /* 속도 (양수는 오른쪽으로 돌아감 / 음수는 왼쪽으로 돌아감) */
+            animation: drawDash 4s forwards infinite;
+        }
+
+        @keyframes drawDash {
+
+            /* to - 마지막 상태 */
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.naver.com" target="_blank">
+        <svg width="276" height="263" viewBox="0 0 276 263" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="myPath"
+                d="M138 16.1803L165.799 101.738L166.922 105.193H170.555H260.515L187.735 158.07L184.796 160.205L185.919 163.66L213.718 249.217L140.939 196.34L138 194.205L135.061 196.34L62.2817 249.217L90.0809 163.66L91.2035 160.205L88.2646 158.07L15.4852 105.193H105.445H109.078L110.201 101.738L138 16.1803Z"
+                stroke="#8B72AA" stroke-width="10" stroke-miterlimit="3.8637" />
+        </svg>
+
+    </a>
+
+
+    <!-- d의 M : 시작점 / Q : 제어점
+        시작점 10, 80에서 시작하여 제어점 95, 10 경유해서 끝점 180, 80으로 이어지는 곡선
+    M : Move to의 약자 / Q : Quadratic Bezier Curve의 약자 -->
+    </svg>
+</body>
+
+</html>
